@@ -1,0 +1,388 @@
+{
+  "users": [
+    {
+      "id": "c138f952-6640-49ae-8a9a-ff8eec3f9d0d",
+      "email": "sham@gmail.com",
+      "password_hash": "$2b$12$ud9HdMTarqd/ZjJ5nRgEq.KyYSR5ieZk.1K8LKCzKTKjryhtHgLmy",
+      "role": "TENANT",
+      "created_at": "2026-02-06T21:04:23.842051+00:00",
+      "updated_at": "2026-02-06T21:04:23.842051+00:00"
+    },
+    {
+      "id": "c0bd2141-77f3-49fb-b444-a957888752c1",
+      "email": "shamsaravai@gmail.com",
+      "password_hash": "$2b$12$StanVfPWo9Hy4fSkrgm2huYAK50./amAYp4DKlrxYlE7Sg7j2st/u",
+      "role": "TENANT",
+      "created_at": "2026-02-07T12:00:38.801770+00:00",
+      "updated_at": "2026-02-07T12:00:38.801770+00:00"
+    },
+    {
+      "id": "cef4996b-0b23-45c1-b9d7-b2fac5b0d317",
+      "email": "andrew@gmail.com",
+      "password_hash": "$2b$12$ZqgBOa1i64B71Qe0UAY/n.uPZJYSNLv1I9CC3dsdBEzX9/IyxUQMi",
+      "first_name": "andrew",
+      "last_name": "curl",
+      "phone": "0733406099",
+      "created_at": "2026-02-07T12:39:36.309383+00:00",
+      "updated_at": "2026-02-07T12:39:36.309383+00:00"
+    },
+    {
+      "id": "fbe41561-6202-40f9-94c8-63b109721b41",
+      "email": "bob@gmail.com",
+      "password_hash": "$2b$12$XFUgrKLit2Cz/ioXt2tik.QFgKyF2eVxVqjnr2L.kYtaZwB67Kntu",
+      "first_name": "bob",
+      "last_name": "jessie",
+      "phone": "0733406011",
+      "created_at": "2026-02-07T12:40:10.326615+00:00",
+      "updated_at": "2026-02-07T12:40:10.326615+00:00"
+    },
+    {
+      "id": "1c8d3229-3e00-4419-8f36-1b4a25e20d6b",
+      "email": "charan@gmail.com",
+      "password_hash": "$2b$12$SApK9O.Mxy/8sVcj7tzxw.6IKrho.s.RNNFXaM16CQl9Of4jODzca",
+      "first_name": "charan",
+      "last_name": "ram",
+      "phone": "0733406016",
+      "created_at": "2026-02-07T12:41:15.153585+00:00",
+      "updated_at": "2026-02-07T12:41:15.153585+00:00"
+    }
+  ],
+  "contracts": [
+    {
+      "id": "6ea1b8ce-c68b-4f47-8cd1-1c1b488ba443",
+      "creator_user_id": "c138f952-6640-49ae-8a9a-ff8eec3f9d0d",
+      "counterparty_user_id": "c0bd2141-77f3-49fb-b444-a957888752c1",
+      "status": "ACCEPTED",
+      "property_address": "sham street 56",
+      "landlord_name": "sham",
+      "tenant_name": "karan",
+      "rent_amount": 50000.0,
+      "deposit_amount": 4999.95,
+      "currency": "SEK",
+      "start_date": "2026-02-20",
+      "end_date": "2026-02-28",
+      "terms_text": "no smoking",
+      "accepted_at": "2026-02-07T12:00:41.418786+00:00",
+      "creator_signed_at": null,
+      "counterparty_signed_at": null,
+      "created_at": "2026-02-06T21:05:06.942425+00:00",
+      "updated_at": "2026-02-07T12:00:41.418786+00:00"
+    },
+    {
+      "id": "0aa2c8b8-3be3-4829-b3d5-2fec7776ed32",
+      "creator_user_id": "1c8d3229-3e00-4419-8f36-1b4a25e20d6b",
+      "counterparty_user_id": "cef4996b-0b23-45c1-b9d7-b2fac5b0d317",
+      "status": "SIGNED",
+      "creator_side": "LANDLORD",
+      "property_address": "building c street c",
+      "landlord_name": "charan@gmail.com",
+      "tenant_name": "andrew@gmail.com",
+      "rent_amount": 50000.0,
+      "deposit_amount": 9999.94,
+      "currency": "SEK",
+      "start_date": "2026-02-14",
+      "end_date": "2026-02-21",
+      "terms_text": "this is a contract from charan as alandlord to tenant andrew",
+      "accepted_at": "2026-02-07T12:42:57.393817+00:00",
+      "creator_signed_at": "2026-02-07T12:43:10.966448+00:00",
+      "counterparty_signed_at": "2026-02-07T12:43:18.598944+00:00",
+      "created_at": "2026-02-07T12:42:19.320501+00:00",
+      "updated_at": "2026-02-07T12:43:18.598944+00:00"
+    },
+    {
+      "id": "15f3c1d3-9f86-4e07-852b-9ab64db61e2b",
+      "creator_user_id": "cef4996b-0b23-45c1-b9d7-b2fac5b0d317",
+      "counterparty_user_id": "fbe41561-6202-40f9-94c8-63b109721b41",
+      "status": "ACCEPTED",
+      "creator_side": "LANDLORD",
+      "property_address": "street A building A",
+      "landlord_name": "andrew@gmail.com",
+      "tenant_name": "bob@gmail.com",
+      "rent_amount": 60000.0,
+      "deposit_amount": 3000.0,
+      "currency": "SEK",
+      "start_date": "2026-02-28",
+      "end_date": "2026-03-13",
+      "terms_text": "contract from Andrew landlord to tenant bob",
+      "accepted_at": "2026-02-07T12:45:09.855798+00:00",
+      "creator_signed_at": null,
+      "counterparty_signed_at": "2026-02-07T12:45:13.758033+00:00",
+      "created_at": "2026-02-07T12:44:20.725262+00:00",
+      "updated_at": "2026-02-07T12:45:13.758033+00:00"
+    },
+    {
+      "id": "b05deb07-5cfd-432e-b27a-e8df51ce6fee",
+      "creator_user_id": "1c8d3229-3e00-4419-8f36-1b4a25e20d6b",
+      "counterparty_user_id": "cef4996b-0b23-45c1-b9d7-b2fac5b0d317",
+      "status": "CANCELLED",
+      "creator_side": "TENANT",
+      "property_address": "sham street",
+      "landlord_name": "andrew curl",
+      "tenant_name": "charan ram",
+      "rent_amount": 10000.0,
+      "deposit_amount": 100.0,
+      "currency": "SEK",
+      "start_date": "2026-02-14",
+      "end_date": "2026-02-22",
+      "terms_text": "test contract",
+      "accepted_at": "2026-02-07T13:07:19.285303+00:00",
+      "creator_signed_at": "2026-02-07T13:08:07.613863+00:00",
+      "counterparty_signed_at": null,
+      "created_at": "2026-02-07T13:05:30.291639+00:00",
+      "updated_at": "2026-02-07T13:14:13.818286+00:00"
+    }
+  ],
+  "contract_invites": [
+    {
+      "id": "2afde93c-15ed-4238-8a62-dfc6db92e013",
+      "contract_id": "6ea1b8ce-c68b-4f47-8cd1-1c1b488ba443",
+      "token_hash": "4cdf84236b36629a29a206193ec9b03aea5cd86cdab93104c4916ac4f655777b",
+      "expires_at": null,
+      "used_at": "2026-02-07T12:00:41.419732+00:00",
+      "created_at": "2026-02-06T21:05:11.364090+00:00"
+    },
+    {
+      "id": "e9303ab9-cc0d-4f3e-989b-2779efddfdc0",
+      "contract_id": "0aa2c8b8-3be3-4829-b3d5-2fec7776ed32",
+      "token_hash": "62a094b88d0553aae8515bbfe45ce6c4f15dcdab4085a665ec227b5f56ef34e6",
+      "expires_at": null,
+      "used_at": "2026-02-07T12:42:57.394455+00:00",
+      "created_at": "2026-02-07T12:42:21.955205+00:00"
+    },
+    {
+      "id": "fbc575c6-5bd1-4cc8-bca0-02a5822d558c",
+      "contract_id": "15f3c1d3-9f86-4e07-852b-9ab64db61e2b",
+      "token_hash": "7b3cd9354b134a2406e2d6fcd81614d2fa6b205fff2bdcabce2b1d0a04881214",
+      "expires_at": null,
+      "used_at": "2026-02-07T12:45:09.856550+00:00",
+      "created_at": "2026-02-07T12:44:22.123339+00:00"
+    },
+    {
+      "id": "f80087de-95f2-4972-90d6-51418a825e35",
+      "contract_id": "b05deb07-5cfd-432e-b27a-e8df51ce6fee",
+      "token_hash": "3e3127cf6eecbcb195c5d9f2fc576db59493f0d66d0f314f5436baf7b59afbd7",
+      "expires_at": null,
+      "used_at": "2026-02-07T13:07:19.286393+00:00",
+      "invitee_email": "andrew@gmail.com",
+      "created_at": "2026-02-07T13:06:02.296400+00:00"
+    }
+  ],
+  "contract_events": [
+    {
+      "id": "3ab14e78-98a4-410d-888c-a27f66bd5051",
+      "contract_id": "6ea1b8ce-c68b-4f47-8cd1-1c1b488ba443",
+      "actor_user_id": "c138f952-6640-49ae-8a9a-ff8eec3f9d0d",
+      "type": "CREATED",
+      "metadata": null,
+      "created_at": "2026-02-06T21:05:06.943202+00:00"
+    },
+    {
+      "id": "5bfc1406-df80-4e64-9303-b5c8ba7ea718",
+      "contract_id": "6ea1b8ce-c68b-4f47-8cd1-1c1b488ba443",
+      "actor_user_id": "c138f952-6640-49ae-8a9a-ff8eec3f9d0d",
+      "type": "INVITE_CREATED",
+      "metadata": null,
+      "created_at": "2026-02-06T21:05:11.365457+00:00"
+    },
+    {
+      "id": "95315777-a721-4d0c-b6e5-af69b5ee2360",
+      "contract_id": "6ea1b8ce-c68b-4f47-8cd1-1c1b488ba443",
+      "actor_user_id": null,
+      "type": "VIEWED",
+      "metadata": null,
+      "created_at": "2026-02-07T11:49:19.939905+00:00"
+    },
+    {
+      "id": "67ba6e90-b980-449f-a505-36d4c65985e7",
+      "contract_id": "6ea1b8ce-c68b-4f47-8cd1-1c1b488ba443",
+      "actor_user_id": null,
+      "type": "VIEWED",
+      "metadata": null,
+      "created_at": "2026-02-07T11:49:19.944038+00:00"
+    },
+    {
+      "id": "80ed4b1a-ffb5-4b6d-91f0-a47a8017fe5c",
+      "contract_id": "6ea1b8ce-c68b-4f47-8cd1-1c1b488ba443",
+      "actor_user_id": null,
+      "type": "VIEWED",
+      "metadata": null,
+      "created_at": "2026-02-07T12:00:14.928831+00:00"
+    },
+    {
+      "id": "02aa237f-bf2f-4a50-a232-79fbc1592101",
+      "contract_id": "6ea1b8ce-c68b-4f47-8cd1-1c1b488ba443",
+      "actor_user_id": null,
+      "type": "VIEWED",
+      "metadata": null,
+      "created_at": "2026-02-07T12:00:39.066080+00:00"
+    },
+    {
+      "id": "8cebf043-51e1-4bea-ae8a-1ad8ffcce5b3",
+      "contract_id": "6ea1b8ce-c68b-4f47-8cd1-1c1b488ba443",
+      "actor_user_id": "c0bd2141-77f3-49fb-b444-a957888752c1",
+      "type": "ACCEPTED",
+      "metadata": null,
+      "created_at": "2026-02-07T12:00:41.419365+00:00"
+    },
+    {
+      "id": "f5a92da8-bdb4-46ec-9453-63de74780c77",
+      "contract_id": "0aa2c8b8-3be3-4829-b3d5-2fec7776ed32",
+      "actor_user_id": "1c8d3229-3e00-4419-8f36-1b4a25e20d6b",
+      "type": "CREATED",
+      "metadata": null,
+      "created_at": "2026-02-07T12:42:19.321254+00:00"
+    },
+    {
+      "id": "36c870a6-c086-4c16-87bc-946dfb35a4ab",
+      "contract_id": "0aa2c8b8-3be3-4829-b3d5-2fec7776ed32",
+      "actor_user_id": "1c8d3229-3e00-4419-8f36-1b4a25e20d6b",
+      "type": "INVITE_CREATED",
+      "metadata": null,
+      "created_at": "2026-02-07T12:42:21.957195+00:00"
+    },
+    {
+      "id": "6829dfa5-200c-44d7-b632-199a60da0152",
+      "contract_id": "0aa2c8b8-3be3-4829-b3d5-2fec7776ed32",
+      "actor_user_id": null,
+      "type": "VIEWED",
+      "metadata": null,
+      "created_at": "2026-02-07T12:42:34.093833+00:00"
+    },
+    {
+      "id": "e6bd3edf-78fc-4bc6-b83d-4c17ad37aae4",
+      "contract_id": "0aa2c8b8-3be3-4829-b3d5-2fec7776ed32",
+      "actor_user_id": null,
+      "type": "VIEWED",
+      "metadata": null,
+      "created_at": "2026-02-07T12:42:52.657866+00:00"
+    },
+    {
+      "id": "47a576b1-9cc3-4015-95f4-7bd6d37e38da",
+      "contract_id": "0aa2c8b8-3be3-4829-b3d5-2fec7776ed32",
+      "actor_user_id": null,
+      "type": "VIEWED",
+      "metadata": null,
+      "created_at": "2026-02-07T12:42:52.660663+00:00"
+    },
+    {
+      "id": "c9aeeb5b-266d-48e6-96b1-131dcbc87439",
+      "contract_id": "0aa2c8b8-3be3-4829-b3d5-2fec7776ed32",
+      "actor_user_id": "cef4996b-0b23-45c1-b9d7-b2fac5b0d317",
+      "type": "ACCEPTED",
+      "metadata": null,
+      "created_at": "2026-02-07T12:42:57.394178+00:00"
+    },
+    {
+      "id": "c13b604b-20be-477e-8db9-b0bef8afe31e",
+      "contract_id": "0aa2c8b8-3be3-4829-b3d5-2fec7776ed32",
+      "actor_user_id": "1c8d3229-3e00-4419-8f36-1b4a25e20d6b",
+      "type": "SIGNED_CREATOR",
+      "metadata": null,
+      "created_at": "2026-02-07T12:43:10.966494+00:00"
+    },
+    {
+      "id": "e2871cd6-1f9d-4f09-a0dc-f784d29880cb",
+      "contract_id": "0aa2c8b8-3be3-4829-b3d5-2fec7776ed32",
+      "actor_user_id": "cef4996b-0b23-45c1-b9d7-b2fac5b0d317",
+      "type": "SIGNED_COUNTERPARTY",
+      "metadata": null,
+      "created_at": "2026-02-07T12:43:18.598970+00:00"
+    },
+    {
+      "id": "b3bdd319-6096-41e5-8388-56c66faaa3de",
+      "contract_id": "15f3c1d3-9f86-4e07-852b-9ab64db61e2b",
+      "actor_user_id": "cef4996b-0b23-45c1-b9d7-b2fac5b0d317",
+      "type": "CREATED",
+      "metadata": null,
+      "created_at": "2026-02-07T12:44:20.725847+00:00"
+    },
+    {
+      "id": "e1d3f7c5-97aa-4cd0-926a-bf4c686b9499",
+      "contract_id": "15f3c1d3-9f86-4e07-852b-9ab64db61e2b",
+      "actor_user_id": "cef4996b-0b23-45c1-b9d7-b2fac5b0d317",
+      "type": "INVITE_CREATED",
+      "metadata": null,
+      "created_at": "2026-02-07T12:44:22.124229+00:00"
+    },
+    {
+      "id": "d813d55d-b63f-412c-bb71-29b172e0ab04",
+      "contract_id": "15f3c1d3-9f86-4e07-852b-9ab64db61e2b",
+      "actor_user_id": null,
+      "type": "VIEWED",
+      "metadata": null,
+      "created_at": "2026-02-07T12:44:41.700428+00:00"
+    },
+    {
+      "id": "e794a571-393f-45dd-84a8-89cbece28a1b",
+      "contract_id": "15f3c1d3-9f86-4e07-852b-9ab64db61e2b",
+      "actor_user_id": null,
+      "type": "VIEWED",
+      "metadata": null,
+      "created_at": "2026-02-07T12:44:55.512889+00:00"
+    },
+    {
+      "id": "5b2bf192-e608-4377-a0d6-e1096b2222a4",
+      "contract_id": "15f3c1d3-9f86-4e07-852b-9ab64db61e2b",
+      "actor_user_id": null,
+      "type": "VIEWED",
+      "metadata": null,
+      "created_at": "2026-02-07T12:45:07.271636+00:00"
+    },
+    {
+      "id": "c8bae1b0-196a-45ec-b62d-f1e0f943d4b5",
+      "contract_id": "15f3c1d3-9f86-4e07-852b-9ab64db61e2b",
+      "actor_user_id": "fbe41561-6202-40f9-94c8-63b109721b41",
+      "type": "ACCEPTED",
+      "metadata": null,
+      "created_at": "2026-02-07T12:45:09.856246+00:00"
+    },
+    {
+      "id": "27c3bd1e-59a2-4a96-82db-e1e45b0c0b62",
+      "contract_id": "15f3c1d3-9f86-4e07-852b-9ab64db61e2b",
+      "actor_user_id": "fbe41561-6202-40f9-94c8-63b109721b41",
+      "type": "SIGNED_COUNTERPARTY",
+      "metadata": null,
+      "created_at": "2026-02-07T12:45:13.758059+00:00"
+    },
+    {
+      "id": "0f47d3f3-cb06-4c1e-82fc-532b82218b78",
+      "contract_id": "b05deb07-5cfd-432e-b27a-e8df51ce6fee",
+      "actor_user_id": "1c8d3229-3e00-4419-8f36-1b4a25e20d6b",
+      "type": "CREATED",
+      "metadata": null,
+      "created_at": "2026-02-07T13:05:30.293770+00:00"
+    },
+    {
+      "id": "e16e2131-9c0d-477d-9f49-606a52c17c8e",
+      "contract_id": "b05deb07-5cfd-432e-b27a-e8df51ce6fee",
+      "actor_user_id": "1c8d3229-3e00-4419-8f36-1b4a25e20d6b",
+      "type": "INVITE_CREATED",
+      "metadata": null,
+      "created_at": "2026-02-07T13:06:02.298205+00:00"
+    },
+    {
+      "id": "458d1066-0855-425e-bbb3-4298cc3cb07f",
+      "contract_id": "b05deb07-5cfd-432e-b27a-e8df51ce6fee",
+      "actor_user_id": "cef4996b-0b23-45c1-b9d7-b2fac5b0d317",
+      "type": "ACCEPTED",
+      "metadata": null,
+      "created_at": "2026-02-07T13:07:19.286043+00:00"
+    },
+    {
+      "id": "7cdb2848-7891-44f8-804f-4e261e600143",
+      "contract_id": "b05deb07-5cfd-432e-b27a-e8df51ce6fee",
+      "actor_user_id": "1c8d3229-3e00-4419-8f36-1b4a25e20d6b",
+      "type": "SIGNED_CREATOR",
+      "metadata": null,
+      "created_at": "2026-02-07T13:08:07.614000+00:00"
+    },
+    {
+      "id": "a8e95244-86ba-47ed-85ef-30d7e440d79d",
+      "contract_id": "b05deb07-5cfd-432e-b27a-e8df51ce6fee",
+      "actor_user_id": "1c8d3229-3e00-4419-8f36-1b4a25e20d6b",
+      "type": "CANCELLED",
+      "metadata": null,
+      "created_at": "2026-02-07T13:14:13.819336+00:00"
+    }
+  ]
+}

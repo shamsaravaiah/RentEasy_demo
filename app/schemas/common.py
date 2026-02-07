@@ -1,0 +1,25 @@
+from enum import Enum
+
+
+class UserRole(str, Enum):
+    LANDLORD = "LANDLORD"
+    TENANT = "TENANT"
+
+
+class ContractStatus(str, Enum):
+    DRAFT = "DRAFT"
+    INVITED = "INVITED"
+    ACCEPTED = "ACCEPTED"
+    SIGNED = "SIGNED"
+    CANCELLED = "CANCELLED"
+    DECLINED = "DECLINED"
+
+
+class ContractEventType(str, Enum):
+    CREATED = "CREATED"
+    INVITE_CREATED = "INVITE_CREATED"
+    VIEWED = "VIEWED"
+    ACCEPTED = "ACCEPTED"
+    SIGNED_CREATOR = "SIGNED_CREATOR"
+    SIGNED_COUNTERPARTY = "SIGNED_COUNTERPARTY"
+    CANCELLED = "CANCELLED"

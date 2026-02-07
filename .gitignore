@@ -1,0 +1,10 @@
+# Firebase credentials - never commit
+app/*firebase*.json
+app/renteasy-*-firebase-adminsdk-*.json
+
+.env
+.DS_Store
+RentEasy/
+__pycache__/
+*.pyc
+node_modules/
