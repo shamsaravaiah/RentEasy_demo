@@ -6,10 +6,12 @@ const DEFAULT_TIMEOUT_MS = 15000;
 const DEFAULT_RETRIES = 2;
 const RETRY_DELAY_MS = 1000;
 
+const PRODUCTION_API_URL = 'https://renteasy-demo-backend.onrender.com';
+
 function getBaseUrl() {
   const url = import.meta.env.VITE_API_URL;
   if (url) return url.replace(/\/$/, '');
-  return 'http://localhost:8000';
+  return import.meta.env.DEV ? 'http://localhost:8000' : PRODUCTION_API_URL;
 }
 
 function getToken() {

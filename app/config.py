@@ -1,8 +1,13 @@
 import json
+import os
 from pathlib import Path
 from typing import Any
 
+from pydantic import model_validator
 from pydantic_settings import BaseSettings
+
+
+PRODUCTION_FRONTEND_URL = "https://renteasy-demo-frontend.onrender.com"
 
 
 class Settings(BaseSettings):
@@ -26,11 +31,15 @@ class Settings(BaseSettings):
         env_file = ".env"
         extra = "ignore"
 
+    @model_validator(mode="after")
+    def use_production_frontend_on_render(self):
+        if os.environ.get("RENDER") and self.base_url == "http://localhost:5173":
+            self.base_url = PRODUCTION_FRONTEND_URL
+        return self
+
 
 def get_firebase_credentials() -> dict[str, Any] | None:
     """Return credentials dict for Firebase Admin SDK, or None if not configured."""
-    import os
-
     s = settings
     # 1. FIREBASE_CREDENTIALS env (for Render, no prefix)
     raw = os.environ.get("FIREBASE_CREDENTIALS") or s.firebase_credentials_json
