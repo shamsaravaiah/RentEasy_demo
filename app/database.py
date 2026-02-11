@@ -62,15 +62,40 @@ def _ensure_db_file() -> Path:
     return settings.db_path
 
 
+# Global cache state
+_json_cache = None
+_json_mtime = 0.0
+
+
 def _get_db_json() -> dict[str, Any]:
+    global _json_cache, _json_mtime
     path = _ensure_db_file()
+    
+    # Check if file has changed
+    current_mtime = path.stat().st_mtime
+    if _json_cache is not None and current_mtime == _json_mtime:
+        return _json_cache
+
+    # Reload from disk
     raw = path.read_text(encoding="utf-8")
-    return json.loads(raw)
+    data = json.loads(raw)
+    
+    # Update cache
+    _json_cache = data
+    _json_mtime = current_mtime
+    return data
 
 
 def _save_db_json(data: dict[str, Any]) -> None:
+    global _json_cache, _json_mtime
     path = _ensure_db_file()
+    
+    # Write to disk
     path.write_text(json.dumps(data, indent=2), encoding="utf-8")
+    
+    # Update cache to match what we just wrote
+    _json_cache = data
+    _json_mtime = path.stat().st_mtime
 
 
 # ---- Firestore implementation ----
