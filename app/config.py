@@ -7,7 +7,7 @@ from pydantic import model_validator
 from pydantic_settings import BaseSettings
 
 
-PRODUCTION_FRONTEND_URL = "https://renteasy-demo-frontend.onrender.com"
+PRODUCTION_FRONTEND_URL = "https://renteasy-demo.onrender.com"
 
 
 class Settings(BaseSettings):
