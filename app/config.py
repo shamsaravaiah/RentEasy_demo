@@ -33,8 +33,9 @@ class Settings(BaseSettings):
 
     @model_validator(mode="after")
     def use_production_frontend_on_render(self):
+        self.base_url = self.base_url.strip().rstrip("/")
         if os.environ.get("RENDER") and self.base_url == "http://localhost:5173":
-            self.base_url = PRODUCTION_FRONTEND_URL
+            self.base_url = PRODUCTION_FRONTEND_URL.strip().rstrip("/")
         return self
 
 

@@ -105,7 +105,8 @@ def create_invite(
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Contract not found")
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Only creator can create invite")
     raw_token, expires_at = result
-    invite_url = f"{settings.base_url}/invite/{raw_token}"
+    base = settings.base_url.strip().rstrip("/")
+    invite_url = f"{base}/invite/{raw_token}"
     return CreateInviteResponse(invite_url=invite_url, expires_at=expires_at)
 
 
