@@ -16,6 +16,15 @@ export function InvitePage() {
   const [accepting, setAccepting] = useState(false);
   const [declining, setDeclining] = useState(false);
   const [declined, setDeclined] = useState(false);
+  const [linkCopied, setLinkCopied] = useState(false);
+
+  const handleCopyLink = (url) => {
+    if (!url) return;
+    navigator.clipboard.writeText(url).then(() => {
+      setLinkCopied(true);
+      setTimeout(() => setLinkCopied(false), 2000);
+    });
+  };
 
   useEffect(() => {
     if (!token) return;
@@ -124,12 +133,21 @@ export function InvitePage() {
           </p>
           <div className="invite-url" style={{ marginTop: '1rem' }}>
             <label>Link to share</label>
-            <input
-              type="text"
-              readOnly
-              value={inviteLink}
-              onFocus={(e) => e.target.select()}
-            />
+            <div className="invite-url-row">
+              <input
+                type="text"
+                readOnly
+                value={inviteLink}
+                onFocus={(e) => e.target.select()}
+              />
+              <button
+                type="button"
+                className="btn btn-secondary invite-copy-btn"
+                onClick={() => handleCopyLink(inviteLink)}
+              >
+                {linkCopied ? 'Copied!' : 'Copy link'}
+              </button>
+            </div>
           </div>
           <div style={{ marginTop: '1rem', display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
             <Link to="/dashboard" className="btn btn-primary">Back to dashboard</Link>

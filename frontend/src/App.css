@@ -642,6 +642,22 @@
   color: var(--color-text-muted);
 }
 
+.invite-url-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: stretch;
+}
+
+.invite-url-row input {
+  flex: 1;
+  min-width: 0;
+}
+
+.invite-copy-btn {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
 .invite-url input {
   min-height: var(--input-height, 2.75rem);
   padding: var(--input-padding-y, 0.625rem) var(--input-padding-x, 0.875rem);

@@ -21,6 +21,15 @@ export function ContractDetail() {
   const [previewOpen, setPreviewOpen] = useState(false);
   const [previewPdfUrl, setPreviewPdfUrl] = useState(null);
   const [previewLoading, setPreviewLoading] = useState(false);
+  const [linkCopied, setLinkCopied] = useState(false);
+
+  const handleCopyLink = (url) => {
+    if (!url) return;
+    navigator.clipboard.writeText(url).then(() => {
+      setLinkCopied(true);
+      setTimeout(() => setLinkCopied(false), 2000);
+    });
+  };
 
   useEffect(() => {
     if (!id) return;
@@ -228,7 +237,16 @@ export function ContractDetail() {
         {inviteUrl ? (
           <div className="invite-url">
             <label>Invite link (share with counterparty)</label>
-            <input type="text" readOnly value={inviteUrl} onFocus={(e) => e.target.select()} />
+            <div className="invite-url-row">
+              <input type="text" readOnly value={inviteUrl} onFocus={(e) => e.target.select()} />
+              <button
+                type="button"
+                className="btn btn-secondary invite-copy-btn"
+                onClick={() => handleCopyLink(inviteUrl)}
+              >
+                {linkCopied ? 'Copied!' : 'Copy link'}
+              </button>
+            </div>
             {sentToEmail ? (
               <p className="invite-sent-note">Sent to {sentToEmail}.</p>
             ) : null}
