@@ -53,7 +53,7 @@ export function Layout({ children, title, titleAction }) {
             <BurgerIcon />
           </button>
         </div>
-        <Link to="/" className="layout-brand" onClick={() => setMenuOpen(false)}>
+        <Link to="/dashboard" className="layout-brand" onClick={() => setMenuOpen(false)}>
           Rent Easy
         </Link>
       </header>
@@ -80,16 +80,18 @@ export function Layout({ children, title, titleAction }) {
               <div className="menu-user" title={user?.email}>
                 {user?.email}
               </div>
-              <Link to="/" role="menuitem" onClick={() => setMenuOpen(false)}>Dashboard</Link>
+              <Link to="/dashboard" role="menuitem" onClick={() => setMenuOpen(false)}>Dashboard</Link>
               <Link to="/contracts/new" role="menuitem" onClick={() => setMenuOpen(false)}>New contract</Link>
-              <Link to="/" role="menuitem" onClick={() => setMenuOpen(false)}>My contracts</Link>
-              <Link to="/" role="menuitem" onClick={() => setMenuOpen(false)}>Account</Link>
+              <Link to="/dashboard" role="menuitem" onClick={() => setMenuOpen(false)}>My contracts</Link>
+              <Link to="/dashboard" role="menuitem" onClick={() => setMenuOpen(false)}>Account</Link>
+              <Link to="/" role="menuitem" onClick={() => setMenuOpen(false)}>About RentEasy</Link>
               <button type="button" role="menuitem" onClick={handleLogout}>Log out</button>
             </>
           ) : (
             <>
               <Link to="/login" role="menuitem" onClick={() => setMenuOpen(false)}>Log in</Link>
               <Link to="/signup" role="menuitem" onClick={() => setMenuOpen(false)}>Sign up</Link>
+              <Link to="/" role="menuitem" onClick={() => setMenuOpen(false)}>About RentEasy</Link>
             </>
           )}
         </div>

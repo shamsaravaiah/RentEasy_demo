@@ -173,7 +173,7 @@ export function CreateContract() {
           </button>
         </form>
       </div>
-      <Link to="/" className="back-link">← Back to dashboard</Link>
+      <Link to="/dashboard" className="back-link">← Back to dashboard</Link>
     </Layout>
   );
 }

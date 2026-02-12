@@ -102,10 +102,10 @@ export function Dashboard() {
               <div className="detail-label" style={{ marginBottom: '0.5rem' }}>Pending invites (accept or decline)</div>
               <ul className="contract-list">
                 {pendingInvites.map((item) => (
-                  <li key={item.contract_id}>
+                  <li key={item.contract_id} className="pending-invite-item">
                     <span className="contract-address">{item.contract.property_address}</span>
                     <span className="contract-meta">{item.contract.currency} {Math.round(Number(item.contract.rent_amount))}</span>
-                    <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.25rem' }}>
+                    <div className="pending-invite-actions">
                       <button
                         type="button"
                         className="btn btn-primary"

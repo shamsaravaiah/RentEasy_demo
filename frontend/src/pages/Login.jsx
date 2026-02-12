@@ -12,7 +12,7 @@ export function Login() {
   const { login } = useAuth();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
-  const redirectTo = searchParams.get('redirect') || '/';
+  const redirectTo = searchParams.get('redirect') || '/dashboard';
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -24,7 +24,7 @@ export function Login() {
     setLoading(true);
     try {
       await login(email.trim(), password);
-      navigate(redirectTo.startsWith('/') ? redirectTo : '/', { replace: true });
+      navigate(redirectTo.startsWith('/') ? redirectTo : '/dashboard', { replace: true });
     } catch (err) {
       setError(err?.message ?? 'Login failed.');
     } finally {

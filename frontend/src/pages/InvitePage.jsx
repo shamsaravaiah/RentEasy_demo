@@ -75,7 +75,7 @@ export function InvitePage() {
     return (
       <Layout>
         <p>Missing invite token.</p>
-        <Link to="/" className="back-link">← Go to dashboard</Link>
+        <Link to="/" className="back-link">← Back to home</Link>
       </Layout>
     );
   }
@@ -88,7 +88,7 @@ export function InvitePage() {
     return (
       <Layout>
         <ErrorMessage error={error} />
-        <Link to="/" className="back-link">← Go to dashboard</Link>
+        <Link to="/" className="back-link">← Back to home</Link>
       </Layout>
     );
   }
@@ -99,7 +99,7 @@ export function InvitePage() {
         <div className="card invite-outcome">
           <h2>You have declined this contract</h2>
           <p className="invite-outcome-text">The contract invite has been declined. You can return to your dashboard.</p>
-          <Link to="/" className="btn btn-primary">Go to dashboard</Link>
+          <Link to="/dashboard" className="btn btn-primary">Go to dashboard</Link>
         </div>
       </Layout>
     );
@@ -132,7 +132,7 @@ export function InvitePage() {
             />
           </div>
           <div style={{ marginTop: '1rem', display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-            <Link to="/" className="btn btn-primary">Back to dashboard</Link>
+            <Link to="/dashboard" className="btn btn-primary">Back to dashboard</Link>
             <button
               type="button"
               className="btn btn-secondary"
@@ -162,9 +162,9 @@ export function InvitePage() {
             </Link>
           </div>
         </div>
-        <Link to="/" className="back-link">← Back</Link>
+        <Link to="/" className="back-link">← Back to home</Link>
       </Layout>
-    );
+  );
   }
 
   /* Signed in: show contract preview and Accept / Decline */
@@ -206,7 +206,7 @@ export function InvitePage() {
           {declining ? 'Declining…' : 'Decline'}
         </button>
       </div>
-      <Link to="/" className="back-link">← Back</Link>
+      <Link to="/dashboard" className="back-link">← Back</Link>
     </Layout>
   );
 }

@@ -19,7 +19,7 @@ export function Signup() {
   const { signup } = useAuth();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
-  const redirectTo = searchParams.get('redirect') || '/';
+  const redirectTo = searchParams.get('redirect') || '/dashboard';
 
   const handleEmailStep = (e) => {
     e.preventDefault();
@@ -45,7 +45,7 @@ export function Signup() {
         last_name: lastName.trim() || undefined,
         phone: phone.trim() || undefined,
       });
-      navigate(redirectTo.startsWith('/') ? redirectTo : '/', { replace: true });
+      navigate(redirectTo.startsWith('/') ? redirectTo : '/dashboard', { replace: true });
     } catch (err) {
       setError(err?.message ?? 'Sign up failed.');
     } finally {

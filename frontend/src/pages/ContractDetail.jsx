@@ -136,7 +136,7 @@ export function ContractDetail() {
     return (
       <Layout>
         <ErrorMessage error={error} />
-        <Link to="/" className="back-link">← Back to dashboard</Link>
+        <Link to="/dashboard" className="back-link">← Back to dashboard</Link>
       </Layout>
     );
   }
@@ -235,7 +235,7 @@ export function ContractDetail() {
             {canInvite && isCreator ? (
               <div className="invite-send-email" style={{ marginTop: '1rem' }}>
                 <label htmlFor="invitee-email-existing">Send to email (they’ll see it in Received)</label>
-                <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', flexWrap: 'wrap', marginTop: '0.25rem' }}>
+                <div className="invite-send-row">
                   <input
                     id="invitee-email-existing"
                     type="email"
@@ -243,7 +243,6 @@ export function ContractDetail() {
                     value={inviteeEmail}
                     onChange={(e) => setInviteeEmail(e.target.value)}
                     className="input"
-                    style={{ flex: '1', minWidth: '200px' }}
                   />
                   <button
                     type="button"
@@ -265,7 +264,7 @@ export function ContractDetail() {
             </button>
             <div className="invite-send-email" style={{ marginTop: '1rem' }}>
               <label htmlFor="invitee-email">Or send to email (they’ll see it in Received)</label>
-              <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', flexWrap: 'wrap', marginTop: '0.25rem' }}>
+              <div className="invite-send-row">
                 <input
                   id="invitee-email"
                   type="email"
@@ -273,7 +272,6 @@ export function ContractDetail() {
                   value={inviteeEmail}
                   onChange={(e) => setInviteeEmail(e.target.value)}
                   className="input"
-                  style={{ flex: '1', minWidth: '200px' }}
                 />
                 <button
                   type="button"
@@ -312,7 +310,7 @@ export function ContractDetail() {
           </div>
         </div>
       ) : null}
-      <Link to="/" className="back-link">← Back to dashboard</Link>
+      <Link to="/dashboard" className="back-link">← Back to dashboard</Link>
     </Layout>
   );
 }
