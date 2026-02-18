@@ -9,7 +9,7 @@ const Dashboard = React.lazy(() => import('./pages/Dashboard.jsx').then(module =
 const Login = React.lazy(() => import('./pages/Login.jsx').then(module => ({ default: module.Login })));
 const Signup = React.lazy(() => import('./pages/Signup.jsx').then(module => ({ default: module.Signup })));
 const ContractDetail = React.lazy(() => import('./pages/ContractDetail.jsx').then(module => ({ default: module.ContractDetail })));
-const CreateContract = React.lazy(() => import('./pages/CreateContract.jsx').then(module => ({ default: module.CreateContract })));
+const ContractApp = React.lazy(() => import('./ContractApp.jsx'));
 const InvitePage = React.lazy(() => import('./pages/InvitePage.jsx').then(module => ({ default: module.InvitePage })));
 
 function LoadingSpinner() {
@@ -39,7 +39,7 @@ function AppRoutes() {
           path="/contracts/new"
           element={
             <ProtectedRoute>
-              <CreateContract />
+              <ContractApp />
             </ProtectedRoute>
           }
         />

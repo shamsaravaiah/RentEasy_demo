@@ -45,6 +45,36 @@
       "phone": "0733406016",
       "created_at": "2026-02-07T12:41:15.153585+00:00",
       "updated_at": "2026-02-07T12:41:15.153585+00:00"
+    },
+    {
+      "id": "9ffb6dec-013e-4fc8-8bec-a5c76ae30a97",
+      "email": "demo@example.com",
+      "password_hash": "$2b$12$AodvxmXdp15/BUBBsJ5J1e27jl51AWobUboKzN4atdjWEn5Wmq7sa",
+      "first_name": "Demo",
+      "last_name": "User",
+      "phone": null,
+      "created_at": "2026-02-17T17:06:22.387435+00:00",
+      "updated_at": "2026-02-17T17:06:22.387435+00:00"
+    },
+    {
+      "id": "efa22800-b566-44b1-8bda-dbe1d964089e",
+      "email": "nestarobert27@gmail.com",
+      "password_hash": "$2b$12$Wsl80RV/dyapjE/TCJyWd.HFzyz8DyqT63Zygi/CaEbzR5jev8iG2",
+      "first_name": "Robert Nesta",
+      "last_name": "Nuhu",
+      "phone": "0708991799",
+      "created_at": "2026-02-17T17:07:02.742480+00:00",
+      "updated_at": "2026-02-17T17:07:02.742480+00:00"
+    },
+    {
+      "id": "bae79361-6d6e-4801-bccd-ccaefae50da2",
+      "email": "test@example.com",
+      "password_hash": "$2b$12$Rl5qIhUI/U8.H8dZd/94Lu2ktyWAssxbJOgIP4qcXvFxTs.MAMJy.",
+      "first_name": "Test",
+      "last_name": "User",
+      "phone": null,
+      "created_at": "2026-02-17T17:22:04.423445+00:00",
+      "updated_at": "2026-02-17T17:22:04.423445+00:00"
     }
   ],
   "contracts": [

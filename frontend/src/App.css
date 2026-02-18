@@ -81,8 +81,13 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .slide-menu {
@@ -358,7 +363,9 @@
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Error boundary */
@@ -459,16 +466,47 @@
   letter-spacing: 0.03em;
 }
 
-.status-badge-draft { background-color: var(--color-bg); color: var(--color-text-muted); border: 1px solid var(--color-border); }
-.status-badge-invited { background-color: #fef3c7; color: #b45309; }
-.status-badge-accepted { background-color: #dbeafe; color: #1d4ed8; }
-.status-badge-signed { background-color: var(--color-primary-bg); color: var(--color-primary); }
-.status-badge-cancelled { background-color: var(--color-danger-bg); color: var(--color-danger); }
-.status-badge-declined { background-color: var(--color-danger-bg); color: var(--color-danger); }
+.status-badge-draft {
+  background-color: var(--color-bg);
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+}
+
+.status-badge-invited {
+  background-color: #fef3c7;
+  color: #b45309;
+}
+
+.status-badge-accepted {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+}
+
+.status-badge-signed {
+  background-color: var(--color-primary-bg);
+  color: var(--color-primary);
+}
+
+.status-badge-cancelled {
+  background-color: var(--color-danger-bg);
+  color: var(--color-danger);
+}
+
+.status-badge-declined {
+  background-color: var(--color-danger-bg);
+  color: var(--color-danger);
+}
 
 @media (prefers-color-scheme: dark) {
-  .status-badge-invited { background-color: rgba(251, 191, 36, 0.2); color: #fbbf24; }
-  .status-badge-accepted { background-color: rgba(59, 130, 246, 0.2); color: #60a5fa; }
+  .status-badge-invited {
+    background-color: rgba(251, 191, 36, 0.2);
+    color: #fbbf24;
+  }
+
+  .status-badge-accepted {
+    background-color: rgba(59, 130, 246, 0.2);
+    color: #60a5fa;
+  }
 }
 
 /* Contract detail */
@@ -543,6 +581,63 @@
   font-style: italic;
 }
 
+
+/* Global Button Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  border-radius: var(--radius-input, 8px);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  line-height: 1.4;
+  text-decoration: none;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: white;
+  border-color: transparent;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background-color: white;
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background-color: var(--color-bg);
+  border-color: var(--color-border-strong);
+  color: var(--color-text-strong);
+}
+
+.btn-danger {
+  background-color: var(--color-danger-bg);
+  color: var(--color-danger);
+  border-color: transparent;
+}
+
+.btn-danger:hover:not(:disabled) {
+  background-color: #fee2e2;
+}
+
+
 .contract-actions {
   display: flex;
   flex-wrap: wrap;
@@ -551,13 +646,194 @@
   margin-bottom: 1.5rem;
 }
 
+.contract-actions .btn,
 .contract-actions .btn-primary,
 .contract-actions .btn-secondary,
 .contract-actions .btn-danger {
-  padding: 0.5rem 1rem;
-  font-size: 0.9375rem;
   flex-shrink: 0;
   min-height: 2.5rem;
+}
+
+/* Selection Cards (Overview/Type) */
+.selection-card {
+  width: 100%;
+  padding: 1rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg-elevated);
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.selection-card:hover {
+  border-color: var(--color-border-strong);
+  background-color: var(--color-bg);
+}
+
+.selection-card.selected {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-bg);
+  box-shadow: 0 0 0 1px var(--color-primary);
+}
+
+.selection-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--color-bg);
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.selection-card.selected .selection-card-icon {
+  background-color: var(--color-primary);
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 4px 6px -1px rgba(13, 148, 136, 0.2);
+}
+
+.selection-card-content {
+  flex: 1;
+}
+
+.selection-card-title {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--color-text);
+  margin-bottom: 0.125rem;
+}
+
+.selection-card.selected .selection-card-title {
+  color: var(--color-primary-dark);
+}
+
+.selection-card-subtitle {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.selection-card.selected .selection-card-subtitle {
+  color: var(--color-primary);
+}
+
+.selection-card-check {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Selection Chips (Utilities/Rules) */
+.selection-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.625rem 0.875rem;
+  border-radius: var(--radius-input, 8px);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg-elevated);
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+  text-align: left;
+}
+
+.selection-chip:hover {
+  background-color: var(--color-bg);
+  border-color: var(--color-border-strong);
+}
+
+.selection-chip.selected {
+  background-color: var(--color-primary-bg);
+  border-color: var(--color-primary);
+  color: var(--color-primary-dark);
+}
+
+.selection-chip-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* Form Extras */
+.input-currency {
+  padding-right: 3rem !important;
+  /* Make room for currency suffix */
+}
+
+.currency-suffix {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+  pointer-events: none;
+}
+
+.info-box {
+  padding: 1rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg);
+  display: flex;
+  gap: 0.75rem;
+  align-items: start;
+}
+
+.info-box.info-primary {
+  background-color: var(--color-primary-bg);
+  border-color: var(--color-primary-light);
+  color: var(--color-primary-dark);
+}
+
+.info-box.info-warning {
+  background-color: #fff7ed;
+  border-color: #ffedd5;
+  color: #9a3412;
+}
+
+.info-box-icon {
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-box-content h4 {
+  font-weight: 600;
+  font-size: 0.9375rem;
+  margin: 0 0 0.25rem;
+}
+
+.info-box-content p {
+  font-size: 0.875rem;
+  margin: 0;
+  opacity: 0.9;
+  line-height: 1.5;
 }
 
 
