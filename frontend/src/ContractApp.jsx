@@ -140,51 +140,44 @@ export default function ContractApp() {
         try {
             const fullAddress = `${formData.propertyAddress}, ${formData.propertyCity} ${formData.propertyPostalCode}`;
 
-            const extraTerms = {
-                contractLanguage,
-                contractType: formData.contractType,
-                catastralRef: formData.catastralRef,
-                touristLicense: formData.touristLicense,
-                utilities: formData.utilitiesIncluded,
-                houseRules: formData.houseRules,
-                pets: formData.pets,
-                subletting: formData.subletting,
-                maxGuests: formData.maxGuests,
-                checkIn: formData.checkIn,
-                checkOut: formData.checkOut,
-                prepayment: formData.prepaymentAmount ? {
-                    amount: formData.prepaymentAmount,
-                    refundable: !formData.prepaymentNonRefundable,
-                    deadline: formData.cancellationDeadline
-                } : null,
-                parties: {
-                    landlord: {
-                        name: formData.landlordName,
-                        idType: formData.landlordIdType,
-                        id: formData.landlordId,
-                        email: formData.landlordEmail,
-                        phone: formData.landlordPhone
-                    },
-                    tenant: {
-                        name: formData.tenantName,
-                        idType: formData.tenantIdType,
-                        id: formData.tenantId,
-                        email: formData.tenantEmail,
-                        phone: formData.tenantPhone
-                    }
-                },
-                customTerms: formData.terms
-            };
-
             const payload = {
                 property_address: fullAddress,
                 creator_side: formData.role === 'landlord' ? 'LANDLORD' : 'TENANT',
-                rent_amount: parseFloat(formData.rentAmount),
-                deposit_amount: parseFloat(formData.depositAmount),
+                rent_amount: parseInt(String(formData.rentAmount), 10) || 0,
+                deposit_amount: parseInt(String(formData.depositAmount), 10) || 0,
                 currency: formData.currency,
                 start_date: formData.startDate,
                 end_date: formData.endDate || undefined,
-                terms_text: JSON.stringify(extraTerms, null, 2)
+                terms_text: formData.terms?.trim() || '',
+                // Extended wizard fields (saved as real DB fields)
+                contract_type: formData.contractType || undefined,
+                property_city: formData.propertyCity || undefined,
+                property_postal_code: formData.propertyPostalCode || undefined,
+                catastral_ref: formData.catastralRef || undefined,
+                tourist_license: formData.touristLicense || undefined,
+                furnished: formData.furnished || undefined,
+                landlord_name: formData.landlordName || undefined,
+                landlord_id_type: formData.landlordIdType || undefined,
+                landlord_id: formData.landlordId || undefined,
+                landlord_email: formData.landlordEmail || undefined,
+                landlord_phone: formData.landlordPhone || undefined,
+                tenant_name: formData.tenantName || undefined,
+                tenant_id_type: formData.tenantIdType || undefined,
+                tenant_id: formData.tenantId || undefined,
+                tenant_email: formData.tenantEmail || undefined,
+                tenant_phone: formData.tenantPhone || undefined,
+                prepayment_amount: formData.prepaymentAmount ? parseInt(String(formData.prepaymentAmount), 10) : undefined,
+                prepayment_refundable: formData.prepaymentAmount ? !formData.prepaymentNonRefundable : undefined,
+                cancellation_deadline: formData.cancellationDeadline || undefined,
+                payment_day: formData.paymentDay || undefined,
+                utilities_included: Array.isArray(formData.utilitiesIncluded) ? formData.utilitiesIncluded : [],
+                house_rules: Array.isArray(formData.houseRules) ? formData.houseRules : [],
+                pets: formData.pets || undefined,
+                subletting: formData.subletting || undefined,
+                notice_period: formData.noticePeriod || undefined,
+                max_guests: formData.maxGuests ? parseInt(String(formData.maxGuests), 10) : undefined,
+                check_in: formData.checkIn || undefined,
+                check_out: formData.checkOut || undefined,
             };
 
             const contract = await contractsApi.createContract(payload);
